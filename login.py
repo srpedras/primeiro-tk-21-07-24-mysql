@@ -33,7 +33,7 @@ class Aplication():
         # trabalhnado com as imagens
         img = PhotoImage(file="icons/rosto.png")
         label_img = ctk.CTkLabel(master=janela, image=img, text=None)
-        label_img.place(x=45, y=70)
+        label_img.place(x=60, y=110)
         label_text = ctk.CTkLabel(master=janela, text='Bem vindo ao seu sitema cadastro', font=(
             'Roboto', 18), text_color=('black'))
         label_text.place(x=20, y=15)
