@@ -1,10 +1,9 @@
+import tkinter as tk
 import customtkinter as ctk
 from tkinter import *
-from PIL import Image, ImageTk
+from PIL import Image
 import database
-
 from tkinter import messagebox
-
 
 janela = ctk.CTk()
 
@@ -31,9 +30,9 @@ class Aplication():
 
     def tela_login(self):
         # trabalhnado com as imagens
-        img = PhotoImage(file="icons/rosto.png")
+        img =tk.PhotoImage(file="icons/rosto.png")
         label_img = ctk.CTkLabel(master=janela, image=img, text=None)
-        label_img.place(x=60, y=110)
+        label_img.place(x=45, y=70)
         label_text = ctk.CTkLabel(master=janela, text='Bem vindo ao seu sitema cadastro', font=(
             'Roboto', 18), text_color=('black'))
         label_text.place(x=20, y=15)
@@ -137,7 +136,6 @@ class Aplication():
                     master=rg_frame2, placeholder_text='Confirme a Senha', width=300, font=('Roboto', 15), show="*")
                 cpassword_login.place(x=25, y=225)
 
-                
                 checkbox = ctk.CTkCheckBox(
                     master=rg_frame2, text="Aceito os termos e Politicas  da empresa")
                 checkbox.place(x=25, y=270)
@@ -265,7 +263,7 @@ class Aplication():
                     Password = password_login.get()
                     Cpasswords = cpassword_login.get()
                     Local = uso_login.get()
-                                        
+
                     # logica para cadastrar corretamente
                     if Name == "":
                         messagebox.showerror(
@@ -288,7 +286,7 @@ class Aplication():
 
                     elif uso_login == "":
                         messagebox.showerror(
-                            title="Register erro", message="Não deixe nenhum campo vazio")    
+                            title="Register erro", message="Não deixe nenhum campo vazio")
 
                     else:
                         database.cursor.execute(""" 
@@ -349,7 +347,6 @@ class Aplication():
                 master=rg_frame, placeholder_text='Confirme a Senha', width=300, font=('Roboto', 15), show="*")
             cpassword_login.place(x=25, y=225)
 
-        
             checkbox = ctk.CTkCheckBox(
                 master=rg_frame, text="Aceito os termos e Politicas  da empresas")
             checkbox.place(x=25, y=270)
